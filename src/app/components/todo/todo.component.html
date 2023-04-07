@@ -1,0 +1,52 @@
+<div class="todos__container">
+  <div class="todos">
+    <form class="todos__input" (submit)="addTask($event)">
+      <div>
+        <input type="text" [(ngModel)]="newItemContent" name="item-content" />
+        <button type="submit">+</button>
+      </div>
+    </form>
+
+    <div class="todos__items">
+      <div
+        class="todos__item"
+        *ngFor="let item of todoItems; let indexOfelement = index"
+      >
+        <span
+          (click)="toggleItemCompleted(item)"
+          [class.todos__item--checkbox-checked]="item.isCompleted"
+          class="todos__item--checkbox"
+        ></span>
+
+        <span
+          [class.todos__item--content-checked]="item.isCompleted"
+          class="todos__item--content"
+        >
+          {{ item.content }}
+        </span>
+
+        <button
+          class="todos__item--delete"
+          (click)="deleteTask(indexOfelement)"
+        >
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path
+                d="M7 4V2h10v2h5v2h-2v15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6H2V4h5zM6 6v14h12V6H6zm3 3h2v8H9V9zm4 0h2v8h-2V9z"
+              ></path>
+            </g>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

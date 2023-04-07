@@ -1,0 +1,103 @@
+.todos {
+  max-width: 1200px;
+  flex-grow: 1;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__input {
+    padding: 0 5rem;
+    margin-bottom: 2rem;
+
+    div {
+      overflow: hidden;
+      position: relative;
+
+      input {
+        width: 100%;
+        font-size: 2.5rem;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        padding: 5px 8px;
+        overflow: hidden;
+      }
+
+      button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        padding: 0 2rem;
+        border-radius: 0 5px 5px 0;
+        background-color: #159895;
+        color: #fff;
+        text-transform: uppercase;
+        border: none;
+        outline: none;
+        font-size: 2.8rem;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__items {
+    padding: 0 2rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    &--checkbox {
+      margin-right: 1rem;
+      width: 2rem;
+      height: 2rem;
+      border: 2px solid #fff;
+      background-color: #fff;
+      cursor: pointer;
+
+      &-checked {
+        background-color: #159895;
+      }
+    }
+
+    &--content {
+      flex-grow: 1;
+      line-height: 0;
+      font-size: 2.8rem;
+
+      &-checked {
+        text-decoration: line-through;
+      }
+    }
+
+    &--delete {
+      background-color: transparent;
+      outline: none;
+      box-shadow: none;
+      cursor: pointer;
+      border: none;
+      line-height: 0;
+
+      &:hover {
+        svg {
+          color: #fc2947;
+        }
+      }
+
+      svg {
+        color: #fff;
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+  }
+}
